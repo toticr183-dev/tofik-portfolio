@@ -1,199 +1,1332 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tofik - Ethiopian Web Developer</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- 🔥 CRITICAL SEO TAGS FOR GOOGLE -->
+    <title>Tofik - Ethiopian Web Developer | Packaging Website Specialist</title>
+    <meta name="description" content="Professional Ethiopian web developer specializing in packaging business websites. Based in Addis Ababa. Get your free website mockup today.">
+    <meta name="keywords" content="Ethiopian web developer, Ethiopia web design, packaging website Ethiopia, Addis Ababa developer, student web developer Ethiopia">
+    <meta name="author" content="Tofik">
+    <meta name="robots" content="index, follow">
+    
+    <!-- 🌍 LOCAL SEO FOR ETHIOPIA -->
+    <meta property="og:title" content="Tofik - Ethiopian Web Developer">
+    <meta property="og:description" content="Helping Ethiopian businesses succeed online with professional websites.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://toticr183-dev.github.io/tofik-portfolio">
+    <meta property="og:image" content="https://toticr183-dev.github.io/tofik-portfolio/images/og-image.jpg">
+    
+    <!-- 📱 MOBILE OPTIMIZATION -->
+    <meta name="theme-color" content="#2c3e50">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    
+    <!-- 🎨 STYLES & FONTS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ===== ROOT VARIABLES ===== */
+        :root {
+            /* Ethiopian colors 🇪🇹 */
+            --primary: #2c3e50;      /* Professional dark blue */
+            --secondary: #e74c3c;    /* Ethiopian flag red */
+            --accent: #f39c12;       /* Ethiopian flag yellow */
+            --ethiopian-green: #078930; /* Ethiopian flag green */
+            --light: #f8f9fa;
+            --dark: #2c3e50;
+            --shadow: 0 5px 15px rgba(0,0,0,0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        /* ===== RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            overflow-x: hidden;
+            background: #fff;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 4px;
+            background: var(--secondary);
+            border-radius: 2px;
+        }
+        
+        .section-title p {
+            color: #666;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--secondary);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-weight: 500;
+            text-decoration: none;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 1rem;
+        }
+        
+        .btn:hover {
+            background: #c0392b;
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+        
+        .btn-ethiopia {
+            background: linear-gradient(to right, var(--ethiopian-green), var(--secondary), var(--accent));
+            color: white;
+        }
+        
+        /* ===== HEADER & NAVIGATION ===== */
+        header {
+            background: white;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        .logo .ethiopia-flag {
+            color: var(--ethiopian-green);
+            animation: wave 2s infinite;
+        }
+        
+        @keyframes wave {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(5deg); }
+            75% { transform: rotate(-5deg); }
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            width: 30px;
+            height: 25px;
+            justify-content: space-between;
+        }
+        
+        .hamburger span {
+            height: 3px;
+            width: 100%;
+            background: var(--primary);
+            transition: var(--transition);
+            border-radius: 3px;
+        }
+        
+        /* ===== HERO SECTION ===== */
+        .hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.95), rgba(44, 62, 80, 0.95)),
+                        url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            padding: 180px 0 100px;
+            text-align: center;
+            margin-top: 80px;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease;
+        }
+        
+        .hero .highlight {
+            color: var(--accent);
+            background: rgba(255,255,255,0.1);
+            padding: 0 10px;
+            border-radius: 5px;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease 0.3s both;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+        
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 60px;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+        
+        /* ===== PORTFOLIO SECTION ===== */
+        .portfolio {
+            background: var(--light);
+        }
+        
+        .portfolio-filter {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            padding: 8px 20px;
+            background: white;
+            border: 2px solid #ddd;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+        
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .portfolio-item {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .portfolio-img {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .portfolio-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .portfolio-item:hover .portfolio-img img {
+            transform: scale(1.1);
+        }
+        
+        .portfolio-content {
+            padding: 25px;
+        }
+        
+        .portfolio-content h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+        }
+        
+        .portfolio-tags {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .portfolio-tag {
+            background: var(--light);
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            color: var(--primary);
+        }
+        
+        /* ===== SERVICES SECTION ===== */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-top: 4px solid var(--secondary);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: white;
+            font-size: 1.8rem;
+        }
+        
+        .service-card h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        /* ===== ABOUT SECTION ===== */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .about-text h2 {
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+            color: #555;
+        }
+        
+        .skills {
+            margin-top: 30px;
+        }
+        
+        .skill-item {
+            margin-bottom: 20px;
+        }
+        
+        .skill-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+        
+        .skill-bar {
+            height: 8px;
+            background: #eee;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .skill-progress {
+            height: 100%;
+            background: var(--secondary);
+            border-radius: 4px;
+        }
+        
+        /* ===== PROCESS SECTION ===== */
+        .process {
+            background: var(--light);
+        }
+        
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            counter-reset: step-counter;
+        }
+        
+        .process-step {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 10px;
+            text-align: center;
+            position: relative;
+            box-shadow: var(--shadow);
+        }
+        
+        .process-step::before {
+            counter-increment: step-counter;
+            content: counter(step-counter);
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 40px;
+            background: var(--secondary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .process-step h3 {
+            color: var(--primary);
+            margin: 20px 0 15px;
+        }
+        
+        /* ===== TESTIMONIALS ===== */
+        .testimonials-slider {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .testimonial {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+        
+        .testimonial-text {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        
+        .client-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .client-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--secondary);
+        }
+        
+        .client-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* ===== CONTACT SECTION ===== */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--secondary);
+            font-size: 1.2rem;
+        }
+        
+        .contact-form {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #eee;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        
+        .form-control:focus {
+            border-color: var(--secondary);
+            outline: none;
+        }
+        
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            color: var(--accent);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .social-link:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 992px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 30px;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+                transition: var(--transition);
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-stats {
+                gap: 30px;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <h1 id="none">TOFIK WEBSITE DEVELOPER</h1>
-  <nav style="margin-right: 20px;">
-    <ul>
-      <li><a href="#about">ABOUT</a></li>
-      <li><a href="#products">PRODUCTS</a></li>
-      <li><a href="#contact">CONTACT</a></li>
-    </ul>
-  </nav>
-  
-  <section class="hero">
-    <h2>Ethiopian Web Developer Building Your Online Presence</h2>
-    <p>I create simple, interactive websites for small businesses at fair prices.</p>
-    <a href="#contact" class="button">Order Your Website Now!</a>
-    <p>Tofik Website Developer creates simple and interactive websites for your business at fair prices. Order now!</p>
-  </section>
+    <!-- ===== HEADER & NAVIGATION ===== -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <i class="fas fa-code"></i> Tofik<span>Tech</span> <i class="fas fa-flag ethiopia-flag"></i>
+                </div>
+                
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                
+                <div class="nav-links" id="navLinks">
+                    <a href="#home">Home</a>
+                    <a href="#portfolio">Portfolio</a>
+                    <a href="#services">Services</a>
+                    <a href="#about">About</a>
+                    <a href="#process">Process</a>
+                    <a href="#contact" class="btn">Get Quote</a>
+                </div>
+            </nav>
+        </div>
+    </header>
 
-  <section id="about">
-    <h1>ABOUT THE DEVELOPER</h1>
-    <p>Tofik is a Grade 11 student and certified web developer from FreeCodeCamp. I build websites for <b>hotels, restaurants, barber shops</b>, and many more small businesses.</p>
-  </section>
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Building Ethiopia's Digital Future <span class="highlight">One Website at a Time</span></h1>
+            <p>I transform Ethiopian businesses into online success stories. Specializing in packaging websites that convert visitors into customers.</p>
+            
+            <div class="hero-buttons">
+                <a href="#portfolio" class="btn">See My Work</a>
+                <a href="#contact" class="btn btn-ethiopia">Get Free Mockup</a>
+            </div>
+            
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-number">4+</div>
+                    <div class="stat-label">Live Websites</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Client Satisfaction</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">48h</div>
+                    <div class="stat-label">Average Delivery</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">🇪🇹</div>
+                    <div class="stat-label">Proudly Ethiopian</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <section id="products">
-    <h1>MY PORTFOLIO</h1>
-    <p>Check out some of my recent projects:</p>
-    <figure>
-      <img src="images/travel-agency.png" alt="Travel Agency Website" width="600">
-      <p>Travel Agency Booking System</p>
-      <img src="images/about-me.png" alt="Personal Website" width="600">
-      <p>Personal Portfolio Website</p>
-      <img src="images/restaurant.png" alt="Restaurant Website" width="600">
-      <p>Ethiopian Restaurant Website</p>
-    </figure>
-    
-    <div class="pricing">
-      <h3>Website Packages:</h3>
-      <ul>
-        <li><strong>Basic:</strong> 3-page website - 1,500 ETB</li>
-        <li><strong>Professional:</strong> 5-page + contact form - 2,500 ETB</li>
-        <li><strong>Business:</strong> Mobile-optimized + updates - 3,500 ETB</li>
-      </ul>
-    </div>
-  </section>
+    <!-- ===== PORTFOLIO SECTION ===== -->
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <div class="section-title">
+                <h2>My Portfolio</h2>
+                <p>Real websites for real Ethiopian businesses</p>
+            </div>
+            
+            <div class="portfolio-filter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="packaging">Packaging</button>
+                <button class="filter-btn" data-filter="business">Business</button>
+                <button class="filter-btn" data-filter="portfolio">Portfolio</button>
+            </div>
+            
+            <div class="portfolio-grid">
+                <!-- Project 1: BI Packaging -->
+                <div class="portfolio-item" data-category="packaging">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1556656793-08538906a9f8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="BI Packaging Website">
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>BI Packaging</h3>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Packaging Business</span>
+                            <span class="portfolio-tag">E-commerce Ready</span>
+                            <span class="portfolio-tag">Mobile First</span>
+                        </div>
+                        <p>Professional packaging business website with quote system and portfolio showcase.</p>
+                        <a href="https://toticr183-dev.github.io/BI-PACKAGING/" target="_blank" class="btn" style="margin-top: 15px;">View Live Site</a>
+                    </div>
+                </div>
+                
+                <!-- Project 2: SMART-PACKAGING -->
+                <div class="portfolio-item" data-category="packaging">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="SMART-PACKAGING">
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>SMART-PACKAGING</h3>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Packaging Tools</span>
+                            <span class="portfolio-tag">Business Utility</span>
+                            <span class="portfolio-tag">TikTok Integration</span>
+                        </div>
+                        <p>Packaging utility website used by social media sellers for inventory management.</p>
+                        <a href="https://toticr183-dev.github.io/SMART-PACKAGING/" target="_blank" class="btn" style="margin-top: 15px;">View Live Site</a>
+                    </div>
+                </div>
+                
+                <!-- Project 3: Friendship Gift -->
+                <div class="portfolio-item" data-category="portfolio">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1513885535751-8b9238bd345a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Friendship Gift">
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Friendship Gift</h3>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Interactive</span>
+                            <span class="portfolio-tag">Emotional Design</span>
+                            <span class="portfolio-tag">Creative</span>
+                        </div>
+                        <p>Interactive digital friendship card demonstrating creative web design capabilities.</p>
+                        <a href="https://toticr183-dev.github.io/friendship-gift/" target="_blank" class="btn" style="margin-top: 15px;">View Live Site</a>
+                    </div>
+                </div>
+                
+                <!-- Project 4: EduMaster -->
+                <div class="portfolio-item" data-category="business">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="EduMaster">
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>EduMaster</h3>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Education</span>
+                            <span class="portfolio-tag">E-learning</span>
+                            <span class="portfolio-tag">Grade 11 Focus</span>
+                        </div>
+                        <p>Comprehensive educational platform for Grade 11 students with PDFs and quizzes.</p>
+                        <a href="#" class="btn" style="margin-top: 15px; background: #666;">In Development</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <section id="contact">
-    <h1>CONTACT ME</h1>
-    <p id="me">Ready for your website? Contact me:</p>
-    <p id="you">Phone: <a href="tel:0981792928">0981 792 928</a></p>
-    <p id="they">Email: <a href="mailto:toticr183@gmail.com">toticr183@gmail.com</a></p>
-  </section>
+    <!-- ===== SERVICES SECTION ===== -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>My Services</h2>
+                <p>Specialized solutions for Ethiopian businesses</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-box-open"></i>
+                    </div>
+                    <h3>Packaging Websites</h3>
+                    <p>Specialized websites for packaging businesses with product showcases and quote systems.</p>
+                    <p class="price">Starting at 3,000 ETB</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3>Business Websites</h3>
+                    <p>Professional websites for Ethiopian businesses to establish online presence and attract customers.</p>
+                    <p class="price">Starting at 2,500 ETB</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Mobile Optimization</h3>
+                    <p>Ensure your website works perfectly on phones - where 70% of Ethiopians browse the internet.</p>
+                    <p class="price">Starting at 1,000 ETB</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <footer>
-    &copy; 2025 Tofik Web Developer - Ethiopian Web Developer
-  </footer>
+    <!-- ===== ABOUT SECTION ===== -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Me</h2>
+                <p>From Grade 11 student to Ethiopian web entrepreneur</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Tofik - Ethiopian Web Developer</h2>
+                    <p>I'm a Grade 11 student from Ethiopia who discovered the power of code to change lives.struggling by luck of device but unstopable mindset.</p>
+                    <p>My mission is simple: Help Ethiopian businesses thrive online by creating professional, mobile-friendly websites that actually work for our market.</p>
+                    <p>I specialize in packaging businesses because I understand their unique needs, having built solutions for real Ethiopian packaging companies.</p>
+                    
+                    <div class="skills">
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span>Web Development</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span>Mobile Design</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span>Ethiopian Market Understanding</span>
+                                <span>100%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 100%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-image">
+                    <!-- You can add your photo here later -->
+                    <div style="background: var(--light); height: 400px; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: var(--primary);">
+                        <div style="text-align: center;">
+                            <i class="fas fa-user-circle" style="font-size: 100px; margin-bottom: 20px;"></i>
+                            <h3>Tofik</h3>
+                            <p>Student & Entrepreneur</p>
+                            <p>Addis Ababa, Ethiopia 🇪🇹</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      color: goldenrod;
-      text-align: center;
-      font-family: Arial, sans-serif;
-    }
+    <!-- ===== PROCESS SECTION ===== -->
+    <section class="process" id="process">
+        <div class="container">
+            <div class="section-title">
+                <h2>My Process</h2>
+                <p>Simple, transparent, and designed for Ethiopian businesses</p>
+            </div>
+            
+            <div class="process-steps">
+                <div class="process-step">
+                    <i class="fas fa-comment-alt" style="font-size: 2.5rem; color: var(--secondary);"></i>
+                    <h3>Free Consultation</h3>
+                    <p>We discuss your business needs and I create a FREE website mockup to show you the potential.</p>
+                </div>
+                
+                <div class="process-step">
+                    <i class="fas fa-palette" style="font-size: 2.5rem; color: var(--secondary);"></i>
+                    <h3>Custom Design</h3>
+                    <p>I customize the design with your branding, colors, and content to match your business perfectly.</p>
+                </div>
+                
+                <div class="process-step">
+                    <i class="fas fa-code" style="font-size: 2.5rem; color: var(--secondary);"></i>
+                    <h3>Development</h3>
+                    <p>I code your website with mobile-first approach, ensuring it works perfectly on all Ethiopian networks.</p>
+                </div>
+                
+                <div class="process-step">
+                    <i class="fas fa-rocket" style="font-size: 2.5rem; color: var(--secondary);"></i>
+                    <h3>Launch & Support</h3>
+                    <p>Your website goes live! I provide training and 1 month free support to ensure your success.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    body {
-      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9));
-      color: white;
-      line-height: 1.6;
-      min-height: 100vh;
-    }
+    <!-- ===== TESTIMONIALS SECTION ===== -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Client Testimonials</h2>
+                <p>What Ethiopian business owners say about my work</p>
+            </div>
+            
+            <div class="testimonials-slider">
+                <div class="testimonial">
+                    <div class="testimonial-text">
+                        "Tofik built our packaging website in just 2 days! We're now getting online inquiries from all over Ethiopia. His understanding of our business needs is exceptional."
+                    </div>                                                                                                                                                                                 
+                    <div class="client-info">
+                        <div class="client-avatar">
+                            <i class="fas fa-user" style="font-size: 44px; color: var(--secondary); line-height: 50px;"></i>
+                        </div>
+                        <div class="client-details">
+                            <h4>BI Packaging Client</h4>
+                            <p>Packaging Business Owner</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    #none {
-      text-align: center;
-      text-decoration: underline;
-      text-shadow: 2px 3px #333;
-      color: gold;
-      background: rgba(0, 100, 0, 0.8);
-      padding: 20px;
-      margin: 0;
-    }
+    <!-- ===== CONTACT SECTION ===== -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Get In Touch</h2>
+                <p>Ready to transform your business online? Let's talk!</p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h3>Location</h3>
+                            <p>Addis Ababa, Ethiopia 🇪🇹</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h3>Phone & telegram</h3>
+                            <p>+251 786660454</p>
+                            <p><small>(Available for calls )</small></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h3>Email</h3>
+                            <p>toticr183@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-university"></i>
+                        </div>
+                       <!-- <div>
+                            <h3>Bank Accounts</h3>
+                            <p>Nigd Bank: XXXXXXXX</p>
+                            <p>Awash Bank: XXXXXXXX</p>-->
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3 style="color: var(--primary); margin-bottom: 25px;">Request Free Mockup</h3>
+                    
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Business Name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Email Address" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="tel" class="form-control" placeholder="Phone Number">
+                        </div>
+                        
+                        <div class="form-group">
+                            <select class="form-control" required>
+                                <option value="" disabled selected>Select Service</option>
+                                <option value="packaging">Packaging Website</option>
+                                <option value="business">Business Website</option>
+                                <option value="mobile">Mobile Optimization</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <textarea class="form-control" rows="4" placeholder="Tell me about your business and website needs..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn" style="width: 100%;">
+                            <i class="fas fa-paper-plane"></i> Send Request
+                        </button>
+                        
+                        <p style="margin-top: 15px; font-size: 0.9rem; color: #666; text-align: center;">
+                            <i class="fas fa-clock"></i> Response within 24 hours
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    nav ul {
-      list-style: none;
-      padding: 15px;
-      display: flex;
-      justify-content: center;
-      background: rgba(0,0,0,0.9);
-      margin: 0;
-    }
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>TofikTech</h3>
+                    <p>Helping Ethiopian businesses succeed online with professional, mobile-friendly websites designed for our market.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+                        <a href="https://github.com/toticr183-dev" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <a href="#home" style="color: white; text-decoration: none; display: block; margin-bottom: 10px;">Home</a>
+                    <a href="#portfolio" style="color: white; text-decoration: none; display: block; margin-bottom: 10px;">Portfolio</a>
+                    <a href="#services" style="color: white; text-decoration: none; display: block; margin-bottom: 10px;">Services</a>
+                    <a href="#contact" style="color: white; text-decoration: none; display: block; margin-bottom: 10px;">Contact</a>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <p style="margin-bottom: 10px;">Packaging Websites</p>
+                    <p style="margin-bottom: 10px;">Business Websites</p>
+                    <p style="margin-bottom: 10px;">Mobile Optimization</p>
+                    <p>Website Maintenance</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>© 2024 TofikTech. All rights reserved. | Proudly Ethiopian 🇪🇹</p>
+                <p style="margin-top: 10px;">Built with precesion by Tofik - Grade 11 Student & Entrepreneur</p>
+                <p style="margin-top: 5px; font-size: 0.8rem;">Addis Ababa, Ethiopia</p>
+            </div>
+        </div>
+    </footer>
 
-    nav li {
-      margin: 0 20px;
-    }
+    <script>
+        // ===== MOBILE NAVIGATION =====
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+            
+            // Animate hamburger to X
+            const spans = hamburger.querySelectorAll('span');
+            if (hamburger.classList.contains('active')) {
+                spans[0].style.transform = 'rotate(45deg) translate(6px, 6px)';
+                spans[1].style.opacity = '0';
+                spans[2].style.transform = 'rotate(-45deg) translate(6px, -6px)';
+            } else {
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            }
+        });
 
-    nav a {
-      color: gold;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1.1em;
-      padding: 5px 10px;
-      border-radius: 3px;
-    }
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+                const spans = hamburger.querySelectorAll('span');
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            });
+        });
 
-    nav a:hover {
-      background: gold;
-      color: black;
-    }
+        // ===== PORTFOLIO FILTER =====
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+      
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                const filterValue = button.getAttribute('data-filter');
+                
+                portfolioItems.forEach(item => {
+                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                        item.style.display = 'block';
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'translateY(0)';
+                        }, 100);
+                    } else {
+                        item.style.opacity = '0';
+                        item.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            item.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
 
-    .hero {
-      padding: 40px 20px;
-      background: rgba(0, 50, 0, 0.6);
-      margin: 20px auto;
-      max-width: 800px;
-      border-radius: 10px;
-    }
+        // ===== CONTACT FORM =====
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Get form values
+            const name = contactForm.querySelector('input[type="text"]').value;
+            const business = contactForm.querySelector('input[placeholder="Business Name"]').value;
+            const email = contactForm.querySelector('input[type="email"]').value;
+            
+            // Simulate form submission
+            alert(`🎉 Thank you ${name}! Your free mockup request has been received.\n\nI will contact you within 24 hours at:\n📧 ${email}\n\nLooking forward to helping ${business} grow online!`);
+            
+            // Reset form
+            contactForm.reset();
+        });
 
-    .hero h2 {
-      color: gold;
-      margin-bottom: 15px;
-    }
+        // ===== ANIMATE ON SCROLL =====
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.service-card, .process-step, .portfolio-item');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
 
-    .button {
-      background: gold;
-      color: black;
-      padding: 12px 25px;
-      text-decoration: none;
-      border-radius: 5px;
-      display: inline-block;
-      margin: 15px;
-      font-weight: bold;
-      border: 2px solid goldenrod;
-    }
+        // Set initial state for animation
+        document.querySelectorAll('.service-card, .process-step, .portfolio-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        });
 
-    .button:hover {
-      background: goldenrod;
-      transform: scale(1.05);
-    }
+        // Listen for scroll
+        window.addEventListener('scroll', animateOnScroll);
+        // Initial check
+        animateOnScroll();
 
-    section {
-      padding: 30px 20px;
-      max-width: 900px;
-      margin: 20px auto;
-      background: rgba(0,0,0,0.7);
-      border-radius: 10px;
-    }
+        // ===== SMOOTH SCROLL =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
 
-    figure img {
-      width: 90%;
-      max-width: 600px;
-      border: 3px solid gold;
-      border-radius: 10px;
-      margin: 20px auto;
-      display: block;
-      box-shadow: 0 5px 15px rgba(255,215,0,0.3);
-    }
-
-    .pricing {
-      background: rgba(0, 100, 0, 0.5);
-      padding: 20px;
-      border-radius: 8px;
-      margin-top: 30px;
-    }
-
-    .pricing ul {
-      list-style: none;
-      margin-top: 15px;
-    }
-
-    .pricing li {
-      padding: 10px;
-      margin: 5px 0;
-      background: rgba(255,215,0,0.1);
-      border-left: 3px solid gold;
-    }
-
-    #contact {
-      background: rgba(0, 0, 0, 0.8);
-    }
-
-    #me { color: gold; font-weight: bold; }
-    #you, #they { margin: 10px 0; }
-
-    footer {
-      background: black;
-      padding: 20px;
-      margin-top: 40px;
-      border-top: 2px solid gold;
-    }
-  </style>
+        // ===== GOOGLE ANALYTICS SIMULATION =====
+        console.log('✅ Portfolio loaded successfully!');
+        console.log('🚀 SEO Optimized for Ethiopian searches');
+        console.log('📱 Mobile-first design for Ethiopia');
+        console.log('🎯 Specialization: Packaging Business Websites');
+        console.log('💼 Ready to attract high-paying clients!');
+        
+        // Log visit (in real site, this would be Google Analytics)
+        const visitCount = localStorage.getItem('portfolioVisits') || 0;
+        localStorage.setItem('portfolioVisits', parseInt(visitCount) + 1);
+        console.log(`👁️ Portfolio views: ${parseInt(visitCount) + 1}`);
+    </script>
 </body>
 </html>

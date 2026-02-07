@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <!-- MAIN PORTFOLIO PAGE - HIGHEST PRIORITY -->
+  <url>
+    <loc>https://toticr183-dev.github.io/tofik-portfolio/</loc>
+    <lastmod>2024-03-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    
+    <!-- If you have multiple language versions -->
+    <xhtml:link rel="alternate" hreflang="en" 
+                href="https://toticr183-dev.github.io/tofik-portfolio/"/>
+    <xhtml:link rel="alternate" hreflang="am" 
+                href="https://toticr183-dev.github.io/tofik-portfolio/am/"/>
+  </url>
+  
+  <!-- PROJECT PAGES (if you create separate pages) -->
+  <url>
+    <loc>https://toticr183-dev.github.io/tofik-portfolio/projects</loc>
+    <lastmod>2024-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- ABOUT PAGE (if you have) -->
+  <url>
+    <loc>https://toticr183-dev.github.io/tofik-portfolio/about</loc>
+    <lastmod>2024-03-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- EXTERNAL PROJECTS (connect your other sites) -->
+  <url>
+    <loc>https://toticr183-dev.github.io/SMART-PACKAGING</loc>
+    <lastmod>2024-03-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+</urlset>

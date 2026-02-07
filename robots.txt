@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+Disallow: /private/
+Disallow: /admin/
+
+# IMPORTANT: This line connects to sitemap
+Sitemap: https://toticr183-dev.github.io/tofik-portfolio/sitemap.xml
+
+# For specific search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2
